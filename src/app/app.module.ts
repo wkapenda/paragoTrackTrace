@@ -19,6 +19,7 @@ import { TrackTraceInfoComponent } from './components/track-trace-info/track-tra
 import { DeliveryProcessInfoComponent } from './components/delivery-process-info/delivery-process-info.component';
 import { PackageLocationHistoryComponent } from './components/package-location-history/package-location-history.component';
 import { TableModule } from 'primeng/table';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { TableModule } from 'primeng/table';
     TrackTraceInfoComponent,
     DeliveryProcessInfoComponent,
     PackageLocationHistoryComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
