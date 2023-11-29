@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+@import "/node_modules/primeflex/primeflex.css";
+@import url("https://fonts.cdnfonts.com/css/futura-pt");
+
+/* src/styles.css or src/styles.scss */
+
+body {
+  margin: 0;
+  font-family: "Futura PT", Arial, Helvetica, sans-serif;
+}
+
+// .p-toolbar {
+//   border: none; /* Change the color and size as needed */
+// }

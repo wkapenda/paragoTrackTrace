@@ -1,0 +1,23 @@
+<section class="package-history flex justify-content-center mb-7">
+  <p-table
+    [value]="products"
+    styleClass="p-datatable-striped"
+    [tableStyle]="{ 'max-width': '50rem' }"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Status</th>
+        <th>Date/Time</th>
+        <th>Location</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+      <tr>
+        <td>{{ product.status }}</td>
+        <td>{{ product.dateTime | date : "d MMMM y, h:mm a" }}</td>
+        <td>{{ product.location }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <br />
+</section>

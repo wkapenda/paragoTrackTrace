@@ -1,0 +1,49 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0px;
+  z-index: 10;
+  height: 69px;
+  right: 0;
+  width: 100%;
+  box-shadow: -3px 1px 2px 1px #d3d3d3;
+
+  .logo img {
+    max-width: 100%;
+    margin-left: 44px;
+    width: 57px;
+    margin-top: 5px;
+  }
+
+  .btn {
+    background: #fff200;
+    font-weight: bold;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-decoration: none;
+    color: black;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  }
+
+  .btn:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 768px) {
+  .navbar {
+    .logo img {
+      margin-left: 20px;
+      width: 49px;
+    }
+  }
+}

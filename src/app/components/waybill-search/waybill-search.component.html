@@ -1,0 +1,46 @@
+<section class="color_grey">
+  <div class="container form_input_full">
+    <div class="container_wrap">
+      <div class="header">
+        <h1>Track your parcel</h1>
+        <p class="taglines">Track your order by entering your waybill number</p>
+      </div>
+
+      <form (ngSubmit)="onSubmit()">
+        <div class="pargo-tracking">
+          <div class="search-input flex justify-content-center">
+            <span class="p-float-label">
+              <input
+                pInputText
+                class="search-input"
+                [ngClass]="{
+                  'ng-invalid ng-dirty': !isWaybillValid() && waybillTouched
+                }"
+                [(ngModel)]="model.waybill"
+                name="waybill"
+                (blur)="validateWaybill()"
+                required
+              />
+              <label for="search">Enter tracking code</label>
+            </span>
+          </div>
+          <p-button
+            type="submit"
+            class="search-btn"
+            [label]="label"
+            [loading]="loading"
+            (click)="submitForm()"
+            [disabled]="isButtonDisabled()"
+          >
+          </p-button>
+        </div>
+        <ng-container *ngIf="!isWaybillValid() && waybillTouched">
+          <small id="username-help" class="p-error"
+            >Waybill number must be 10 characters.</small
+          >
+        </ng-container>
+      </form>
+    </div>
+  </div>
+  <app-package-location-history></app-package-location-history>
+</section>
