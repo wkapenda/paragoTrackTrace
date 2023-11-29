@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { PackageHistoryResponse } from '../interfaces/track-trace';
 
 @Injectable({
   providedIn: 'root',
@@ -15,9 +16,13 @@ export class TrackTraceService {
     return throwError(() => new Error(error.message));
   }
 
-  getPackageHistory(): Observable<any> {
+  getPackageHistory(
+    waybillNumber: string
+  ): Observable<PackageHistoryResponse[]> {
     return this.httpClient
-      .get<any>(`${environment.apiUrl}api/package`)
+      .get<PackageHistoryResponse[]>(`${environment.baseUrl}api/package/`, {
+        params: { waybillNumber },
+      })
       .pipe(catchError((error: HttpErrorResponse) => this.handleError(error)));
   }
 }

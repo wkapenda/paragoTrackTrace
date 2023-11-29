@@ -42,5 +42,14 @@
       </form>
     </div>
   </div>
-  <app-package-location-history></app-package-location-history>
+  <ng-container *ngIf="packageHistory && packageHistory.length > 0">
+    <app-package-location-history
+      [packageHistory]="packageHistory"
+    ></app-package-location-history>
+    <p-progressBar
+      mode="indeterminate"
+      [style]="{ height: '6px', backgroundColor: '#fff200' }"
+      *ngIf="loading"
+    ></p-progressBar>
+  </ng-container>
 </section>

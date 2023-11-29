@@ -15,11 +15,15 @@ import { AnimateModule } from 'primeng/animate';
 import { ButtonModule } from 'primeng/button';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
+import { HttpClientModule } from '@angular/common/http';
 import { TrackTraceInfoComponent } from './components/track-trace-info/track-trace-info.component';
 import { DeliveryProcessInfoComponent } from './components/delivery-process-info/delivery-process-info.component';
 import { PackageLocationHistoryComponent } from './components/package-location-history/package-location-history.component';
 import { TableModule } from 'primeng/table';
+import { ProgressBarModule } from 'primeng/progressbar';
+import { ToastModule } from 'primeng/toast';
 import { HomeComponent } from './pages/home/home.component';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -35,6 +39,7 @@ import { HomeComponent } from './pages/home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ToolbarModule,
     FormsModule,
     ReactiveFormsModule,
@@ -45,8 +50,10 @@ import { HomeComponent } from './pages/home/home.component';
     MessageModule,
     MessagesModule,
     TableModule,
+    ProgressBarModule,
+    ToastModule,
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
