@@ -22,6 +22,24 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## Additional Information
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **Preprogrammed Waybill Numbers:**
+
+  1. [Insert Waybill Number 1]
+  2. [Insert Waybill Number 2]
+  3. [Insert Waybill Number 3]
+
+- **UI Library Used:**
+
+  - [PrimeNG](https://www.primefaces.org/primeng/)
+
+- **Outstanding Tasks:**
+
+  1. Implement unit tests.
+  2. Conduct code refactoring.
+
+- **Known Issues:**
+  - There is a bug in the toaster component on mobile screen, the toaster is partially cut off.
+
+For more help on the Angular CLI, use `ng help` or visit the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
