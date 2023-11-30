@@ -35,14 +35,15 @@ export class WaybillSearchComponent {
       this.model.waybill.length === 10 || this.model.waybill.length === 0;
   }
 
-  onSubmit(): void {
+  async onSubmit(): Promise<void> {
     this.loading = true;
+
     if (this.isWaybillValid()) {
+      // Simulate a 3-second waiting period
+      await this.load();
       this.trackTraceService.getPackageHistory(this.model.waybill).subscribe({
         next: (response) => {
           this.packageHistory = response;
-          console.log('Package History:', this.packageHistory);
-          this.loading = false;
 
           if (this.packageHistory.length === 0) {
             this.messageService.add({
@@ -51,10 +52,11 @@ export class WaybillSearchComponent {
               detail: 'No package history found.',
             });
           }
+          this.loading = false;
         },
         error: (error) => {
-          console.error('Error fetching package history:', error);
           this.loading = false;
+          console.error('Error fetching package history:', error);
 
           this.messageService.add({
             severity: 'error',
@@ -62,19 +64,29 @@ export class WaybillSearchComponent {
             detail: 'Failed to fetch package history. Please try again.',
           });
         },
+        complete: () => {
+          this.loading = false;
+        },
       });
     }
   }
 
   submitForm(): void {
+    this.packageHistory = [];
     this.validateWaybill();
     this.waybillTouched = true;
     this.onSubmit();
-
-    console.log('Form submitted:', this.model.waybill);
   }
 
   isWaybillValid(): boolean {
     return this.waybillValid;
+  }
+
+  async load(): Promise<void> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 3000);
+    });
   }
 }
