@@ -2,7 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.
 
+## Clone Repository
+
+git clone -b master https://github.com/wkapenda/paragoTrackTrace.git
+
 ## Development server
+
+Run `npm install` to install all dependencies.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
@@ -26,9 +32,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 - **Preprogrammed Waybill Numbers:**
 
-  1. [Insert Waybill Number 1]
-  2. [Insert Waybill Number 2]
-  3. [Insert Waybill Number 3]
+  1. PGO1234567
+  2. PGO8901234
+  3. PGO5678901
 
 - **UI Library Used:**
 

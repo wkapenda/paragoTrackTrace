@@ -20,7 +20,7 @@ export class TrackTraceService {
     waybillNumber: string
   ): Observable<PackageHistoryResponse[]> {
     return this.httpClient
-      .get<PackageHistoryResponse[]>(`${environment.baseUrl}api/package/`, {
+      .get<PackageHistoryResponse[]>(`${environment.apiUrl}`, {
         params: { waybillNumber },
       })
       .pipe(catchError((error: HttpErrorResponse) => this.handleError(error)));

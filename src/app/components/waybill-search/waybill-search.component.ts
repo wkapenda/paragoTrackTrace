@@ -55,7 +55,6 @@ export class WaybillSearchComponent {
           this.loading = false;
         },
         error: (error) => {
-          this.loading = false;
           console.error('Error fetching package history:', error);
 
           this.messageService.add({
@@ -63,6 +62,7 @@ export class WaybillSearchComponent {
             summary: 'Error',
             detail: 'Failed to fetch package history. Please try again.',
           });
+          this.loading = false;
         },
         complete: () => {
           this.loading = false;
